@@ -1,0 +1,6 @@
+python_spider/venv
+python_spider/.idea
+express_server/node_modules
+express_server/.idea
+vue_page/node_modules
+vue_page/.idea
