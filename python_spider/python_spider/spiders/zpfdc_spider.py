@@ -6,6 +6,8 @@
 import scrapy
 import datetime
 
+# 设置抓取日期天数
+DATE_RANGE = 365
 
 class HousingPriceSpider(scrapy.Spider):
     name = "zpfdc"
@@ -28,7 +30,7 @@ class HousingPriceSpider(scrapy.Spider):
             last_edit_time = ware_list_item.css('div.ware_list_item_2>span::text').get()
             last_edit_time = last_edit_time.partition('：')[-1].strip()
             if (datetime.datetime.strptime(last_edit_time, '%Y-%m-%d %H:%M:%S') + datetime.timedelta(
-                    days=90)) < datetime.datetime.now():
+                    days=DATE_RANGE)) < datetime.datetime.now():
                 return
         next_page = response.css('div.page>a::attr(href)').getall()[-2]
         if next_page is not None:
