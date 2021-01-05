@@ -31,5 +31,5 @@ class PythonSpiderPipeline:
         if adapter.get('单价'):
             adapter['单价'] = re.findall(r'^\d+', adapter['单价'])[0]
         if adapter.get('更新时间'):
-            adapter['更新时间'] = adapter['更新时间'].partition('：')[-1].strip()
+            adapter['更新时间'] = adapter['更新时间'].partition('：')[-1].strip()[:10]
         return item

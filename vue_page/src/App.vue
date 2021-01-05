@@ -101,7 +101,7 @@ export default {
   },
   mounted() {
     //读取数据
-    this.allPriceData = require('../../python_spider/test.json');
+    this.allPriceData = require('../../data/housing_price.json');
   }
 }
 </script>
