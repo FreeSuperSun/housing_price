@@ -93,3 +93,4 @@ FEED_EXPORT_ENCODING = 'utf-8'
 
 FEED_URI = 'file://' + str(Path('../data').resolve()) + '/housing_price.jl'
 FEED_FORMAT = 'jsonlines'
+FEED_OVERWRITE = True
